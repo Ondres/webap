@@ -63,6 +63,7 @@ flutter:
      - assets/moon-36.gif
      - assets/2.jpg
      - assets/12.jpg
+     - assets/33.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -30,99 +30,141 @@ class HomePage extends StatelessWidget {
       child:  Column(
         //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-                SizedBox(
+            SizedBox(
                   height: 40,
                   width: 10,
                 ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Design Studio B/w',  style:TextStyle(
+                MediaQuery.of(context).size.width < 500 ?
+                Text('Design&Marketing Studio',  style:TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize:20,
+                  color: Colors.white70,
+                  fontFamily: 'CormorantGaramond',
+                )):
+                Text('Design&Marketing Studio',  style:TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 50,
                   color: Colors.white70,
                   fontFamily: 'CormorantGaramond',
-                )),
+                ))
               ],
             ),
+
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 130),
+                  padding:
+                  MediaQuery.of(context).size.width < 500 ?
+                  EdgeInsets.only(top: 10):
+                  EdgeInsets.only(top: 130),
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height*3,
+                    height: MediaQuery.of(context).size.width < 500 ?
+                    MediaQuery.of(context).size.height*1.3:
+                    MediaQuery.of(context).size.height*3.5,
                   color: Colors.transparent,
                         child: Column(
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.height*0.75,
-                              padding: EdgeInsets.fromLTRB(100, 20,0, 0),
+                              height: MediaQuery.of(context).size.width < 500 ?
+                              MediaQuery.of(context).size.height*0.3:
+                              MediaQuery.of(context).size.height*0.75,
+                              padding: MediaQuery.of(context).size.width < 500 ?
+                              EdgeInsets.fromLTRB(20, 0,0, 0):
+                              EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-
-
                                   Container(
                                     decoration: const BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage("assets/12.jpg"),
+                                          image: AssetImage("assets/1.jpg"),
                                           fit: BoxFit.cover),
 
                                       borderRadius: BorderRadius.all(Radius.circular(30)),
                                     ),
                                     width: MediaQuery.of(context).size.width*0.45,
-                                    height: MediaQuery.of(context).size.height*0.45,
+                                    height: MediaQuery.of(context).size.width*0.45,
 
                                   ),
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child:
+                                    child: MediaQuery.of(context).size.width < 500 ?
                                     Text(
-                                        'The design, written content, and visual or video elements together tell an important story about who you are and why you do it.'
-                                        ,  style:TextStyle(
+                                        'ABOUT US \n We can make simple designs in 1 day. our principles to work quickly and efficiently ',
+                                        style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )):
+                                    Text(
+                                          'ABOUT US \n \n We can make simple designs in one day. Our principles to work quickly and efficiently ',
+                                          style:TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
                                       fontFamily: 'CormorantGaramond',
-                                    )),),
-                                ],),),
+                                    )),
+                                  ),
+                                ],),
+                            ),
 
-                           Container(
-                               height: MediaQuery.of(context).size.height*0.75,
-                               padding: EdgeInsets.fromLTRB(100, 20,0, 0),
-                             child:
-                             Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                               children: [
-                               Container(
-                                 width: MediaQuery.of(context).size.width*0.35,
-                                 child:
-                                   Text(
-                                       'The design, written content, and visual or video elements together tell an important story about who you are and why you do it.'
-                                       ,  style:TextStyle(
-                                     fontWeight: FontWeight.bold,
-                                     fontSize: 36,
-                                     color: Colors.white60,
-                                     fontFamily: 'CormorantGaramond',
-                                   )),),
-
-                               Container(
-                                 decoration: const BoxDecoration(
-                                   image: DecorationImage(
-                                       image: AssetImage("assets/2.jpg"),
-                                       fit: BoxFit.cover),
-
-                                   borderRadius: BorderRadius.all(Radius.circular(30)),
-                                 ),
-                                 width: MediaQuery.of(context).size.width*0.45,
-                                 height: MediaQuery.of(context).size.height*0.45,
-
-                               )
-                          ],),),
                             Container(
-                              height: MediaQuery.of(context).size.height*0.75,
-                              padding: EdgeInsets.fromLTRB(100, 20,0, 0),
+                              height: MediaQuery.of(context).size.width < 500 ?
+                              MediaQuery.of(context).size.height*0.3:
+                              MediaQuery.of(context).size.height*0.75,
+                              padding: MediaQuery.of(context).size.width < 500 ?
+                              EdgeInsets.fromLTRB(20, 0,0, 0):
+                              EdgeInsets.fromLTRB(100, 20,0, 0),
+                              child:
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width*0.35,
+                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    Text(
+                                        'GUARANTEES \n \n We have Best designers and programmers, who have over five years experience in IT, about fifty projects behind'
+                                        ,  style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )):
+                                    Text(
+                                        'GUARANTEES \n \n We have Best designers and programmers, who have over five years experience in IT, about fifty projects behind'
+                                        ,  style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 36,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )),
+                                  ),
+                                  Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage("assets/33.jpg"),
+                                          fit: BoxFit.cover),
+
+                                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                                    ),
+                                    width: MediaQuery.of(context).size.width*0.45,
+                                    height: MediaQuery.of(context).size.width*0.45,
+
+                                  ),
+                                ],),
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.width < 500 ?
+                              MediaQuery.of(context).size.height*0.3:
+                              MediaQuery.of(context).size.height*0.75,
+                              padding: MediaQuery.of(context).size.width < 500 ?
+                              EdgeInsets.fromLTRB(20, 0,0, 0):
+                              EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -138,48 +180,76 @@ class HomePage extends StatelessWidget {
                                       borderRadius: BorderRadius.all(Radius.circular(30)),
                                     ),
                                     width: MediaQuery.of(context).size.width*0.45,
-                                    height: MediaQuery.of(context).size.height*0.45,
+                                    height: MediaQuery.of(context).size.width*0.45,
+
                                   ),
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child:
+                                    child: MediaQuery.of(context).size.width < 500 ?
                                     Text(
-                                        'The design, written content, and visual or video elements together tell an important story about who you are and why you do it.'
+                                        'OPPORTUNITIES AND VARIETY \n \n Аll projects that you order from us are limited only by your fantasies and requests'
+                                        ,  style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )):
+                                    Text(
+                                        'OPPORTUNITIES AND VARIETY \n \n Аll projects that you order from us are limited only by your fantasies and requests'
                                         ,  style:TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
                                       fontFamily: 'CormorantGaramond',
-                                    )),),
-                                ],),),
-                  Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-              Container(
-              width: MediaQuery.of(context).size.width*0.35,
-             child:
-              Text(
-              'The design, written content, and visual or video elements together tell an important story about who you are and why you do it.',  style:TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 36,
-              color: Colors.white60,
-              fontFamily: 'CormorantGaramond',
-              )),),
+                                    )),
+                                  ),
+                                ],),
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.width < 500 ?
+                              MediaQuery.of(context).size.height*0.3:
+                              MediaQuery.of(context).size.height*0.75,
+                              padding: MediaQuery.of(context).size.width < 500 ?
+                              EdgeInsets.fromLTRB(20, 0,0, 0):
+                              EdgeInsets.fromLTRB(100, 20,0, 0),
+                              child:
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    width: MediaQuery.of(context).size.width*0.35,
+                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    Text(
+                                        'THIS PAGE \n \n Its just an example of simple first page. From such pages, with some more widgets, the design is formed'
+                                        ,  style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )):
+                                    Text(
+                                        'THIS PAGE \n \n Its just an example of simple first page. From such pages, with some more widgets, the design is formed'
+                                        ,  style:TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 36,
+                                      color: Colors.white60,
+                                      fontFamily: 'CormorantGaramond',
+                                    )),
+                                  ),
+                                  Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage("assets/2.jpg"),
+                                          fit: BoxFit.cover),
 
-            Container(
-            decoration: const BoxDecoration(
-            image: DecorationImage(
-            image: AssetImage("assets/2.jpg"),
-            fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                                    ),
+                                    width: MediaQuery.of(context).size.width*0.45,
+                                    height: MediaQuery.of(context).size.width*0.45,
 
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            ),
-            width: MediaQuery.of(context).size.width*0.45,
-            height: MediaQuery.of(context).size.height*0.45,
-
-            )
-
-                ],),
+                                  ),
+                                ],),
+                            ),
                           ],
                         )
                       ),
@@ -187,7 +257,7 @@ class HomePage extends StatelessWidget {
                   ),
             Container(
               padding: EdgeInsets.all(20),
-              child:
+              child: MediaQuery.of(context).size.width > 500 ?
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -224,7 +294,12 @@ class HomePage extends StatelessWidget {
                   )),
                 ),
               ],
-            ),)
+            ):
+            Container(
+              height: 10,
+              width: 10,
+            ),
+            )
           ],
         ));
     }
