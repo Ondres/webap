@@ -333,7 +333,7 @@ class _HomePageState extends State<HomePage> {
                     )),
                   ),
                   Container(
-                    child: Text('Email: qwentyl77@gmail.com',  style:TextStyle(
+                    child: Text('Email: igordacisek@gmail.com',  style:TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 10,
                       color: Colors.white60,
