@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/main.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 
-ScrollController _scrollController = new ScrollController();
+final urlImages = [
+  'assets/2.jpg',
+  'assets/12.jpg',
+  'assets/33.jpg',
+  'assets/1.jpg',
+];
 
-class HomePage extends StatelessWidget {
+final controller = CarouselController();
+
+class HomePage extends StatefulWidget {
+
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+
+  ScrollController _scrollController = new ScrollController();
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,13 +58,13 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize:20,
                   color: Colors.white70,
-                  fontFamily: 'CormorantGaramond',
+                  fontFamily: 'GrapeNuts',
                 )):
                 Text('Design&Marketing Studio',  style:TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 50,
                   color: Colors.white70,
-                  fontFamily: 'CormorantGaramond',
+                  fontFamily: 'GrapeNuts',
                 ))
               ],
             ),
@@ -99,7 +115,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )):
                                     Text(
                                           'ABOUT US \n \n We can make simple designs in one day. Our principles to work quickly and efficiently ',
@@ -107,7 +123,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )),
                                   ),
                                 ],),
@@ -133,7 +149,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )):
                                     Text(
                                         'GUARANTEES \n \n We have Best designers and programmers, who have over five years experience in IT, about fifty projects behind'
@@ -141,7 +157,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )),
                                   ),
                                   Container(
@@ -192,7 +208,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )):
                                     Text(
                                         'OPPORTUNITIES AND VARIETY \n \n Аll projects that you order from us are limited only by your fantasies and requests'
@@ -200,7 +216,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )),
                                   ),
                                 ],),
@@ -225,7 +241,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )):
                                     Text(
                                         'THIS PAGE \n \n Its just an example of simple first page. From such pages, with some more widgets, the design is formed'
@@ -233,7 +249,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 36,
                                       color: Colors.white60,
-                                      fontFamily: 'CormorantGaramond',
+                                      fontFamily: 'GrapeNuts',
                                     )),
                                   ),
                                   Container(
@@ -255,50 +271,76 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+            CarouselSlider.builder(
+              itemCount: 4,
+
+              itemBuilder: (context,index,ri)
+              {
+                final urlImage = urlImages[index];
+
+                return buildImage(urlImage, index);
+              },
+              carouselController: controller,
+              options: CarouselOptions(
+                  autoPlay: true,
+                  disableCenter: true,
+                  height:MediaQuery.of(context).size.width>500?
+                  MediaQuery.of(context).size.height*0.8:
+                  MediaQuery.of(context).size.height*0.4,
+                 // viewportFraction: 1,
+                  initialPage: 3,
+                  enableInfiniteScroll: true,
+                  onPageChanged: (index, reason) {
+                    setState(() => activeIndex = index);
+                  }
+              ),
+            ),
             Container(
               padding: EdgeInsets.all(20),
               child: MediaQuery.of(context).size.width > 500 ?
-            Row(
+
+              Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                   Container(
                     child: Text('Contact us: ',  style:TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 28,
                       color: Colors.white60,
-                      fontFamily: 'CormorantGaramond',
+                      fontFamily: 'GrapeNuts',
                     )),
                   ),
                 Container(
-                  child: Text('tel: 1 900 180 15',  style:TextStyle(
+                  child: Text('Email: qwentyl77@gmail.com',  style:TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 28,
                     color: Colors.white60,
-                    fontFamily: 'CormorantGaramond',
+                    fontFamily: 'GrapeNuts',
                   )),
-                ),
-                Container(
-                  child: Text('inst: @qwerty',  style:TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.white60,
-                    fontFamily: 'CormorantGaramond',
-                  )),
-                ),
-                Container(
-                  child: Text('telegram: @asdfg',  style:TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.white60,
-                    fontFamily: 'CormorantGaramond',
-                  )),
-                ),
+                )
               ],
             ):
-            Container(
-              height: 10,
-              width: 10,
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    child: Text('Contact us: ',  style:TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10,
+                      color: Colors.white60,
+                      fontFamily: 'GrapeNuts',
+                    )),
+                  ),
+                  Container(
+                    child: Text('Email: qwentyl77@gmail.com',  style:TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10,
+                      color: Colors.white60,
+                      fontFamily: 'GrapeNuts',
+                    )),
+                  )
+                ],
+              )
             )
           ],
         ));
@@ -307,4 +349,15 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildImage(String urlImage, int index ) =>  Container(
+  margin:EdgeInsets.all(20) ,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+        image: DecorationImage(
+  image: AssetImage(urlImage),
+  fit: BoxFit.cover),
+  ),
+  width: MediaQuery.of(context).size.width*0.5,
+  height: MediaQuery.of(context).size.width*0.5);
 }

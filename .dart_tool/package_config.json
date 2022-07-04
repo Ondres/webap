@@ -14,6 +14,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/Andrei/Desktop/desktopdart/flutter_windows_2.10.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/Users/Andrei/Desktop/desktopdart/flutter_windows_2.10.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0",
       "packageUri": "lib/",
@@ -152,7 +158,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-07-02T15:16:31.658426Z",
+  "generated": "2022-07-04T05:48:36.928276Z",
   "generator": "pub",
   "generatorVersion": "2.17.5"
 }
