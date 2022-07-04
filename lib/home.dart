@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MediaQuery.of(context).size.width < 500 ?
+                MediaQuery.of(context).size.width < 800 ?
                 Text('Design&Marketing Studio',  style:TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize:20,
@@ -73,21 +73,21 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   padding:
-                  MediaQuery.of(context).size.width < 500 ?
+                  MediaQuery.of(context).size.width < 800 ?
                   EdgeInsets.only(top: 10):
                   EdgeInsets.only(top: 130),
                   width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width < 500 ?
+                    height: MediaQuery.of(context).size.width < 800 ?
                     MediaQuery.of(context).size.height*1.3:
                     MediaQuery.of(context).size.height*3.5,
                   color: Colors.transparent,
                         child: Column(
                           children: [
                             Container(
-                              height: MediaQuery.of(context).size.width < 500 ?
+                              height: MediaQuery.of(context).size.width < 800 ?
                               MediaQuery.of(context).size.height*0.3:
                               MediaQuery.of(context).size.height*0.75,
-                              padding: MediaQuery.of(context).size.width < 500 ?
+                              padding: MediaQuery.of(context).size.width < 800 ?
                               EdgeInsets.fromLTRB(20, 0,0, 0):
                               EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    child: MediaQuery.of(context).size.width < 800 ?
                                     Text(
                                         'ABOUT US \n We can make simple designs in 1 day. our principles to work quickly and efficiently ',
                                         style:TextStyle(
@@ -130,10 +130,10 @@ class _HomePageState extends State<HomePage> {
                             ),
 
                             Container(
-                              height: MediaQuery.of(context).size.width < 500 ?
+                              height: MediaQuery.of(context).size.width < 800 ?
                               MediaQuery.of(context).size.height*0.3:
                               MediaQuery.of(context).size.height*0.75,
-                              padding: MediaQuery.of(context).size.width < 500 ?
+                              padding: MediaQuery.of(context).size.width < 800 ?
                               EdgeInsets.fromLTRB(20, 0,0, 0):
                               EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    child: MediaQuery.of(context).size.width < 800 ?
                                     Text(
                                         'GUARANTEES \n \n We have Best designers and programmers, who have over five years experience in IT, about fifty projects behind'
                                         ,  style:TextStyle(
@@ -175,10 +175,10 @@ class _HomePageState extends State<HomePage> {
                                 ],),
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.width < 500 ?
+                              height: MediaQuery.of(context).size.width < 800 ?
                               MediaQuery.of(context).size.height*0.3:
                               MediaQuery.of(context).size.height*0.75,
-                              padding: MediaQuery.of(context).size.width < 500 ?
+                              padding: MediaQuery.of(context).size.width < 800 ?
                               EdgeInsets.fromLTRB(20, 0,0, 0):
                               EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    child: MediaQuery.of(context).size.width < 800 ?
                                     Text(
                                         'OPPORTUNITIES AND VARIETY \n \n Аll projects that you order from us are limited only by your fantasies and requests'
                                         ,  style:TextStyle(
@@ -222,10 +222,10 @@ class _HomePageState extends State<HomePage> {
                                 ],),
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.width < 500 ?
+                              height: MediaQuery.of(context).size.width < 800 ?
                               MediaQuery.of(context).size.height*0.3:
                               MediaQuery.of(context).size.height*0.75,
-                              padding: MediaQuery.of(context).size.width < 500 ?
+                              padding: MediaQuery.of(context).size.width < 800 ?
                               EdgeInsets.fromLTRB(20, 0,0, 0):
                               EdgeInsets.fromLTRB(100, 20,0, 0),
                               child:
@@ -234,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Container(
                                     width: MediaQuery.of(context).size.width*0.35,
-                                    child: MediaQuery.of(context).size.width < 500 ?
+                                    child: MediaQuery.of(context).size.width < 800 ?
                                     Text(
                                         'THIS PAGE \n \n Its just an example of simple first page. From such pages, with some more widgets, the design is formed'
                                         ,  style:TextStyle(
@@ -284,9 +284,10 @@ class _HomePageState extends State<HomePage> {
               options: CarouselOptions(
                   autoPlay: true,
                   disableCenter: true,
-                  height:MediaQuery.of(context).size.width>500?
+                  height:MediaQuery.of(context).size.width>800?
                   MediaQuery.of(context).size.height*0.8:
                   MediaQuery.of(context).size.height*0.4,
+               //  scrollDirection: Axis.horizontal,
                  // viewportFraction: 1,
                   initialPage: 3,
                   enableInfiniteScroll: true,
@@ -297,7 +298,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               padding: EdgeInsets.all(20),
-              child: MediaQuery.of(context).size.width > 500 ?
+              child: MediaQuery.of(context).size.width > 800 ?
 
               Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

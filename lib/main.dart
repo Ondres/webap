@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:my_app/home.dart';
 
+import 'home1.dart';
+
 
 
 
@@ -14,6 +16,8 @@ void main() async
     initialRoute: '/',
     routes: {
       '/': (context) => HomePage(),
+      '/1': (context) => HomePage1(),
+
     },
   ));
 }
